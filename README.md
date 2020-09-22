@@ -1,6 +1,6 @@
 # fyp
 
-A new Flutter application.
+An Flutter for Smart Fire Alarm System. The project is still undergoing development
 
 ## Getting Started
 
