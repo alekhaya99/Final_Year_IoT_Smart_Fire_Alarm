@@ -16,7 +16,7 @@ class MainSectionState extends State<MainSection> {
   int _selectedTab = 0;
   final _pageOptions = [
     FirstScreen(),
-    FirebaseRealtimeDemoScreen(),
+    SinglePageApp(),
     FireAlert(),
 
   ];

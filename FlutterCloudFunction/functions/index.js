@@ -2,7 +2,7 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
-exports.helloWorld = functions.database.ref('FIRE').onUpdate(evt => {
+exports.fire = functions.database.ref('FIRE').onUpdate(evt => {
     const payload = {
         notification:{
             title : 'Emergency',
