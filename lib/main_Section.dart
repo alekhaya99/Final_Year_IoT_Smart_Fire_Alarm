@@ -29,7 +29,7 @@ class MainSectionState extends State<MainSection> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Dr LUM gives A'),
+          title: Text('Final Year Project'),
           centerTitle: true,
 
         ),
@@ -48,11 +48,11 @@ class MainSectionState extends State<MainSection> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.category),
-              title: Text('Categories'),
+              title: Text('Temperature'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              title: Text('Search'),
+              icon: Icon(Icons.report_problem),
+              title: Text('Fire'),
             ),
           ],
         ),

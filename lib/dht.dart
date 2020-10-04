@@ -2,8 +2,9 @@ class DHT {
   final double temp;
   final double humidity;
   final double heatIndex;
+  final double temp_F;
 
-  DHT({this.temp, this.humidity, this.heatIndex});
+  DHT({this.temp, this.humidity, this.heatIndex, this.temp_F});
 
   factory DHT.fromJson(Map<dynamic, dynamic> json) {
     double parser(dynamic source) {
@@ -17,6 +18,7 @@ class DHT {
     return DHT(
         temp: parser(json['temp']),
         humidity: parser(json['hum']),
-        heatIndex: parser(json['ht']));
+        heatIndex: parser(json['ht']),
+        temp_F: parser(json['temp_F']));
   }
 }

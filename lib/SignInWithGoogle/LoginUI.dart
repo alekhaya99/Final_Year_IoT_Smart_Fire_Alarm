@@ -14,9 +14,9 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String textValue = 'Emergency !';
-  FirebaseMessaging firebaseMessaging =  FirebaseMessaging();
+  FirebaseMessaging firebaseMessaging = FirebaseMessaging();
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   @override
   void initState() {
@@ -74,24 +74,23 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.white,
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Image.network('https://blog.axway.com/wp-content/uploads/2019/01/GettyImages-961775200.jpgIoT-and-integration-696x487.jpg',width: MediaQuery.of(context).size.width,),
-              SizedBox(height: 50),
-              _signInButton(),
-            ],
-          ),
+        color: Colors.white38,
+        child: Stack(
+          children: <Widget>[
+             Image.network(
+                    'https://blog.axway.com/wp-content/uploads/2019/01/GettyImages-961775200.jpgIoT-and-integration-696x487.jpg',
+                  ),
+
+            Align(alignment: Alignment.center, child: _signInButton()),
+          ],
         ),
       ),
     );
   }
+
   Widget _signInButton() {
     return OutlineButton(
-      splashColor: Colors.grey,
+      splashColor: Colors.green,
       onPressed: () {
         signInWithGoogle().then((result) {
           if (result != null) {
@@ -106,22 +105,27 @@ class _LoginPageState extends State<LoginPage> {
         });
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-      highlightElevation: 0,
-      borderSide: BorderSide(color: Colors.grey),
+      color: Colors.black,
+      highlightColor: Colors.black,
+      highlightElevation: 15,
+      borderSide: BorderSide(color: Colors.black),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image(image: NetworkImage("https://www.pngkey.com/png/full/10-109089_google-logo-png-transparent-google-logo-round-png.png"), height: 35),
+            Image(
+                image: NetworkImage(
+                    "https://www.pngkey.com/png/full/10-109089_google-logo-png-transparent-google-logo-round-png.png"),
+                height: 35),
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Text(
                 'Sign in with Google',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.grey,
+                  color: Colors.black,
                 ),
               ),
             )
@@ -130,5 +134,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
 }

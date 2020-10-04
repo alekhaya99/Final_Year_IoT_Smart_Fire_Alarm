@@ -11,7 +11,7 @@ class FirstScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [Colors.green[100], Colors.green[400]],
+            colors: [Colors.white, Colors.white38],
           ),
         ),
         child: Center(
