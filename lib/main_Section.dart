@@ -17,7 +17,7 @@ class MainSectionState extends State<MainSection> {
   final _pageOptions = [
     FirstScreen(),
     SinglePageApp(),
-    FireAlert(),
+
 
   ];
   @override
