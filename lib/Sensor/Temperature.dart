@@ -116,7 +116,7 @@ class _SinglePageAppState extends State<SinglePageApp> {
         Container(
           padding: const EdgeInsets.only(bottom: 40),
           child: Text(
-            "${_dht.temp_F.toStringAsFixed(2)} °C",
+            "${_dht.temp_F.toStringAsFixed(2)} °F",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
           ),
         ),

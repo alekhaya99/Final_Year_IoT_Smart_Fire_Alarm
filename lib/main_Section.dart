@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fyp/Sensor/Camera_Webview.dart';
 import 'package:fyp/Sensor/FireAlert.dart';
 import 'package:fyp/SignInWithGoogle/First_Screen.dart';
 import 'package:fyp/Sensor/Temperature.dart';
@@ -17,7 +18,7 @@ class MainSectionState extends State<MainSection> {
   final _pageOptions = [
     FirstScreen(),
     SinglePageApp(),
-
+CameraView(),
 
   ];
   @override
@@ -47,12 +48,12 @@ class MainSectionState extends State<MainSection> {
               title: Text('Home'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.category),
+              icon: Icon(Icons.priority_high),
               title: Text('Temperature'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.report_problem),
-              title: Text('Fire'),
+              icon: Icon(Icons.camera),
+              title: Text('Camera View'),
             ),
           ],
         ),

@@ -43,6 +43,7 @@ dependencies:
   flutter_thermometer: ^1.0.0
   flutter_animation_progress_bar:
   wave_progress_widget: ^0.0.1
+  webview_flutter:
 
 
 dev_dependencies:
