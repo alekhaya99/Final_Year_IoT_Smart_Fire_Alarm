@@ -38,7 +38,7 @@ class FirstScreen extends StatelessWidget {
                 name,
                 style: TextStyle(
                     fontSize: 25,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20),
@@ -53,16 +53,19 @@ class FirstScreen extends StatelessWidget {
                 email,
                 style: TextStyle(
                     fontSize: 25,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 40),
               RaisedButton(
                 onPressed: () {
                   signOutGoogle();
-                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return LoginPage();}), ModalRoute.withName('/'));
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) {
+                    return LoginPage();
+                  }), ModalRoute.withName('/'));
                 },
-                color: Colors.deepPurple,
+                color: Colors.green,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(

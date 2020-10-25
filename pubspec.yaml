@@ -44,6 +44,8 @@ dependencies:
   flutter_animation_progress_bar:
   wave_progress_widget: ^0.0.1
   webview_flutter:
+  syncfusion_flutter_gauges:
+  gradient_app_bar:
 
 
 dev_dependencies:

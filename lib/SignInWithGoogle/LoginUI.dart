@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fyp/main_Section.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -74,14 +75,47 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.white38,
-        child: Stack(
-          children: <Widget>[
-             Image.network(
-                    'https://blog.axway.com/wp-content/uploads/2019/01/GettyImages-961775200.jpgIoT-and-integration-696x487.jpg',
-                  ),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
 
-            Align(alignment: Alignment.center, child: _signInButton()),
+              Colors.lightGreen,
+
+              Colors.white
+              ],
+          ),
+        ),
+        child: ListView(
+          children: <Widget>[
+            SizedBox(height: 25,),
+            Expanded(child: Center(child: ShaderMask(
+                blendMode: BlendMode.srcIn,
+                shaderCallback: (Rect bounds) {
+                  return LinearGradient(
+                    colors: [Colors.blue,Colors.red,Colors.blue,Colors.orange,Colors.deepPurple,Colors.black],
+                    tileMode: TileMode.mirror,
+                  ).createShader(bounds);
+                },
+                child: Text("Final Year Project",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35,))))),
+             SizedBox(height: 10,),
+             Padding(
+               padding: const EdgeInsets.all(15),
+               child: ClipRRect(
+                 borderRadius: BorderRadius.circular(15),
+
+                 child: Image.network(
+                        'https://cdn2.vectorstock.com/i/1000x1000/81/01/smart-home-automation-isometric-infographic-poster-vector-13668101.jpg',
+                      ),
+               ),
+             ),
+            SizedBox(height:10),
+
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: _signInButton(),
+            ),
           ],
         ),
       ),
@@ -90,7 +124,9 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _signInButton() {
     return OutlineButton(
+
       splashColor: Colors.green,
+
       onPressed: () {
         signInWithGoogle().then((result) {
           if (result != null) {
@@ -105,10 +141,10 @@ class _LoginPageState extends State<LoginPage> {
         });
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-      color: Colors.black,
-      highlightColor: Colors.black,
+      color: Colors.transparent,
+      highlightColor: Colors.lightGreen,
       highlightElevation: 15,
-      borderSide: BorderSide(color: Colors.black),
+      borderSide: BorderSide(color: Colors.black,width: 3),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Row(
@@ -121,11 +157,20 @@ class _LoginPageState extends State<LoginPage> {
                 height: 35),
             Padding(
               padding: const EdgeInsets.only(left: 10),
-              child: Text(
-                'Sign in with Google',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
+              child: ShaderMask(
+                blendMode: BlendMode.srcIn,
+                shaderCallback: (Rect bounds) {
+                  return LinearGradient(
+                    colors: [Colors.purple,Colors.teal,Colors.blue,Colors.red],
+                    tileMode: TileMode.mirror,
+                  ).createShader(bounds);
+                },
+                child: Text(
+                  'Sign in with Google',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             )
