@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fyp/Sensor/Camera_Webview.dart';
-import 'package:fyp/Sensor/FireAlert.dart';
 import 'package:fyp/Sensor/Smoke.dart';
 import 'package:fyp/SignInWithGoogle/First_Screen.dart';
 import 'package:fyp/Sensor/Temperature.dart';
-import 'package:fyp/CRUD_Ops/Test.dart';
-
-
 
 class MainSection extends StatefulWidget {
   @override
@@ -20,7 +16,7 @@ class MainSectionState extends State<MainSection> {
     FirstScreen(),
     SinglePageApp(),
     Smoke(),
-CameraView(),
+    CameraView(),
 
   ];
   @override

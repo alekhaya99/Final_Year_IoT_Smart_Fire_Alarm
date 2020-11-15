@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
@@ -100,6 +99,24 @@ class _SinglePageAppState extends State<SinglePageApp> {
                   ),
                 ),
               ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(40),
+                  child: FAProgressBar(
+                    progressColor: Colors.green,
+                    direction: Axis.vertical,
+                    verticalDirection: VerticalDirection.up,
+                    size: 100,
+                    currentValue: _dht.humidity.round(),
+                    changeColorValue: 100,
+                    changeProgressColor: Colors.red,
+                    maxValue: 150,
+                    displayText: "%",
+                    borderRadius: 16,
+                    animatedDuration: Duration(milliseconds: 500),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -111,9 +128,16 @@ class _SinglePageAppState extends State<SinglePageApp> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.only(bottom: 40),
+          padding: const EdgeInsets.only(bottom: 15),
           child: Text(
             "${_dht.temp_F.toStringAsFixed(2)} °F",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.only(bottom: 40),
+          child: Text(
+            "${_dht.humidity.toStringAsFixed(2)} %",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
           ),
         ),

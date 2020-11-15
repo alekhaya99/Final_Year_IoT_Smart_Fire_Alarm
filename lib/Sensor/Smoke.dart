@@ -3,7 +3,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:fyp/MQ2.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-
 class Smoke extends StatefulWidget {
   @override
   _SmokeState createState() => _SmokeState();
@@ -28,9 +27,9 @@ class _SmokeState extends State<Smoke> {
                       !snapshot.hasError &&
                       snapshot.data.snapshot.value != null) {
                     var _smoke =
-                    MQ2.fromJson(snapshot.data.snapshot.value['Json']);
+                    SmokeSensor.fromJson(snapshot.data.snapshot.value['Json']);
                     print(
-                        "DHT: ${_smoke.co} / ${_smoke.lpg} / ${_smoke.smoke}");
+                        "SmokeSensor: ${_smoke.co} / ${_smoke.lpg} / ${_smoke.smoke}");
 
                     return _smokeLayout(_smoke);
                   } else {
@@ -46,7 +45,7 @@ class _SmokeState extends State<Smoke> {
       ),
     );
   }
-  Widget _smokeLayout(MQ2 _smoke){
+  Widget _smokeLayout(SmokeSensor _smoke){
     return ListView(
       padding: const EdgeInsets.all(8),
       children: [
@@ -62,7 +61,7 @@ class _SmokeState extends State<Smoke> {
                 NeedlePointer(value: _smoke.co)],
               annotations: <GaugeAnnotation>[
                 GaugeAnnotation(widget: Container(child:
-                Text('${_smoke.co.toStringAsFixed(2)}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
+                Text('${_smoke.co.toStringAsFixed(1)}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
                     angle: 90, positionFactor: 0.5
                 )]
           )]
@@ -76,7 +75,7 @@ class _SmokeState extends State<Smoke> {
                 GaugeRange(startValue: 100,endValue: 150,color: Colors.orange),
                 GaugeRange(startValue:150,endValue: 200,color:Colors.red )],
               pointers: <GaugePointer>[
-                NeedlePointer(value: _smoke.lpg)],
+                NeedlePointer(value: _smoke.lpg.toDouble())],
               annotations: <GaugeAnnotation>[
                 GaugeAnnotation(widget: Container(child:
                 Text('${_smoke.lpg.toStringAsFixed(2)}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
@@ -96,7 +95,7 @@ class _SmokeState extends State<Smoke> {
                 NeedlePointer(value: _smoke.smoke)],
               annotations: <GaugeAnnotation>[
                 GaugeAnnotation(widget: Container(child:
-                Text('${_smoke.smoke.toStringAsFixed(2)}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
+                Text('${_smoke.smoke.toStringAsFixed(1)}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
                     angle: 90, positionFactor: 0.5
                 )]
           )]
@@ -104,8 +103,6 @@ class _SmokeState extends State<Smoke> {
 
       ],
     );
-
   }
-
 }
 

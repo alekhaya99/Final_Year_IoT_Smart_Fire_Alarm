@@ -1,11 +1,11 @@
-class MQ2 {
+class SmokeSensor{
   final double co;
   final double lpg;
   final double smoke;
 
-  MQ2({this.co, this.lpg, this.smoke});
+  SmokeSensor({this.co, this.lpg, this.smoke});
 
-  factory MQ2.fromJson(Map<dynamic, dynamic> json) {
+  factory SmokeSensor.fromJson(Map<dynamic, dynamic> json) {
     double parser(dynamic source) {
       try {
         return double.parse(source.toString());
@@ -14,7 +14,7 @@ class MQ2 {
       }
     }
 
-    return MQ2(
+    return SmokeSensor(
         co: parser(json['co']),
         lpg: parser(json['lpg']),
         smoke: parser(json['smoke']),
