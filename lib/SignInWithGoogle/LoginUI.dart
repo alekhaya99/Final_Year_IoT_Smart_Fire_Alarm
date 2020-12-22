@@ -153,6 +153,12 @@ class _LoginPageState extends State<LoginPage> {
                 image: NetworkImage(
                     "https://www.pngkey.com/png/full/10-109089_google-logo-png-transparent-google-logo-round-png.png"),
                 height: 35),
+            Image(
+              image:NetworkImage(
+                "https://www.pngkey.com/png/full/10-109089_google-logo-png-transparent-google-logo-round-png.png"
+              ),
+
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: ShaderMask(

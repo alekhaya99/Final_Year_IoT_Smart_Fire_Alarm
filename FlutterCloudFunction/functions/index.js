@@ -22,3 +22,5 @@ exports.fire = functions.database.ref('FIRE').onUpdate(evt => {
         }
     });
 });
+
+
